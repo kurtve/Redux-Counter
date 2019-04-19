@@ -1,5 +1,4 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
+export const UPDATE_COUNTER = 'UPDATE_COUNTER';
 
 // Our action creators will return
 // an action packet that our reducer will
@@ -11,12 +10,14 @@ export const DECREMENT = 'DECREMENT';
 
 export const increment = () => {
 	return {
-		type: INCREMENT
+		type: UPDATE_COUNTER,
+		payload: 1
 	};
 };
 
 export const decrement = () => {
 	return {
-		type: DECREMENT
+		type: UPDATE_COUNTER,
+		payload: -1
 	};
 };

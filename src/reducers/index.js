@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from '../actions';
+import { UPDATE_COUNTER } from '../actions';
 
 const initialState = {
 	count: 0
@@ -11,10 +11,8 @@ const initialState = {
 // need to do with the count in each case?
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case INCREMENT:
-			return { count: state.count + 1 };	
-		case DECREMENT:
-			return { count: state.count - 1 };
+		case UPDATE_COUNTER:
+			return { count: state.count + action.payload };
 		default:
 			return state;
 	}
