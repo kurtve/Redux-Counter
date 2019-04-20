@@ -1,7 +1,7 @@
-import { INCREMENT, DECREMENT } from '../actions';
+import { UPDATE_COUNTER } from '../actions';
 
 const initialState = {
-  count: 0
+	count: 0
 }
 
 // Our reducer that handles our two action cases:
@@ -10,12 +10,10 @@ const initialState = {
 // by our action creator. What does the reducer
 // need to do with the count in each case?
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case INCREMENT:
-    // Fill in the body of this case
-    case DECREMENT:
-    // Fill in the body of this case
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case UPDATE_COUNTER:
+			return { count: state.count + action.payload };
+		default:
+			return state;
+	}
 };
